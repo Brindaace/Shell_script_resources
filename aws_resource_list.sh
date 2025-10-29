@@ -36,8 +36,10 @@ if [ $# -ne 2 ]; then
 fi
 
 # Assign the arguments to variables and convert the service to lowercase
-aws_region=$1
-aws_service=$2
+
+
+aws_region=${1,,}
+aws_service=${2,,}
 
 # Check if the AWS CLI is installed
 if ! command -v aws &> /dev/null; then
